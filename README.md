@@ -1,19 +1,19 @@
 # 🗳️ Election Process Education Assistant
 
-An interactive web app built using Streamlit to help users understand the election process in India.
+An interactive web application built using Streamlit to help users understand the election process in India.
 
 ## 🚀 Features
-- Check voting eligibility
-- Step-by-step voter registration guide
-- Voting process explanation
-- Interactive chatbot
-- Clean UI
+- ✅ Check voting eligibility
+- 📝 Step-by-step voter registration guide
+- 🗳️ Voting process explanation
+- 💬 Interactive chatbot assistant
+- 📍 Polling information guidance
 
-## 🛠 Tech Stack
+## 🛠️ Tech Stack
 - Python
 - Streamlit
 
-## 🌐 Live App
-[Click here to use the app](YOUR_DEPLOYED_LINK)
-
-## 📌 Developed for Hackathon
+## ▶️ How to Run Locally
+```bash
+pip install -r requirements.txt
+streamlit run app.py
