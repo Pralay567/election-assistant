@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 streamlit
 google-generativeai
 python-dotenv
-=======
 streamlit
->>>>>>> a40629815d679da1e8272fb7a111a1c1e9f769fc
