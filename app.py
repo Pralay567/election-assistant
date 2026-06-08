@@ -70,7 +70,7 @@ menu = st.sidebar.radio(
 if menu == "🏠 Home":
 
     st.image(
-        "https://kommodo.ai/i/X7A85nEReEai5FxhbaGs",
+        "https://i.postimg.cc/4dFh0txs/Voting-Guide-templte-EA.jpg",
         use_container_width=True
     )
 
