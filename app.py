@@ -47,54 +47,13 @@ def set_bg(image_url):
     )
 
 # -------------------------------
-# Title
-# -------------------------------
-st.title("🗳️ Smart Election Assistant")
-st.caption("AI-powered guide for Indian voters 🇮🇳")
-
-# -------------------------------
-# Sidebar
-# -------------------------------
-st.sidebar.title("Navigation")
-
-menu = st.sidebar.radio(
-    "Go to",
-    [
-        "🏠 Home",
-        "👤 Check Eligibility",
-        "📝 Register to Vote",
-        "🗳️ Voting Guide",
-        "📍 Find Polling Info",
-        "💬 AI Assistant"
-    ]
-)
-
-# -------------------------------
 # Background Images
 # -------------------------------
 bg_images = {
-    "🏠 Home": "https://share.google/al1XbbYhBm6ToXPc0",
-    "👤 Check Eligibility": "https://kommodo.ai/i/dvKkstX4XFQKJhlOQWse",
-    "📝 Register to Vote": "https://share.google/kBr9ydOHaP9OaFPd1",
-    "🗳️ Voting Guide": "https://kommodo.ai/i/vwqfbPgHEkZ4W0CKLSRS",
-    "📍 Find Polling Info": "https://share.google/I7PUPgrIR6uUFYwr2",
-    "💬 AI Assistant": "https://share.google/fJf6Uxw1dW6vIY1su"
+    "🏠 Home": "https://img.sanishtech.com/u/337bc60db7f1312a06f7cddd3e3b7e45.webp",
 }
 
 set_bg(bg_images.get(menu, ""))
-
-# -------------------------------
-# HOME
-# -------------------------------
-if menu == "🏠 Home":
-    st.header("Welcome 👋")
-    st.markdown("""
-- 🧾 Check eligibility  
-- 📝 Voter registration  
-- 🗳️ Voting guide  
-- 📍 Polling booth finder  
-- 💬 AI assistant  
-""")
 
 # -------------------------------
 # ELIGIBILITY
