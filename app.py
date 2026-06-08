@@ -74,9 +74,9 @@ menu = st.sidebar.radio(
 # -------------------------------
 bg_images = {
     "🏠 Home": "https://share.google/al1XbbYhBm6ToXPc0",
-    "👤 Check Eligibility": "https://share.google/bLdgCpWS3bWXl5f5k",
+    "👤 Check Eligibility": "https://kommodo.ai/i/dvKkstX4XFQKJhlOQWse",
     "📝 Register to Vote": "https://share.google/kBr9ydOHaP9OaFPd1",
-    "🗳️ Voting Guide": "https://share.google/uQBBcnUDYflVxVcee",
+    "🗳️ Voting Guide": "https://kommodo.ai/i/vwqfbPgHEkZ4W0CKLSRS",
     "📍 Find Polling Info": "https://share.google/I7PUPgrIR6uUFYwr2",
     "💬 AI Assistant": "https://share.google/fJf6Uxw1dW6vIY1su"
 }
