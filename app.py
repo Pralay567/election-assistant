@@ -23,37 +23,72 @@ st.set_page_config(
 )
 
 # -------------------------------
-# Background Function
+# Professional Styling
 # -------------------------------
-def set_bg(image_url):
-    st.markdown(
-        f"""
-        <style>
-        .stApp {{
-            background-image: url("{image_url}");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }}
-        .block-container {{
-            background-color: rgba(125, 190, 195, 0.95);
-            padding: 2rem;
-            border-radius: 12px;
-        }}
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
-
-# -------------------------------
-# Background Images
-# -------------------------------
-bg_images = {
-    "🏠 Home": "https://img.sanishtech.com/u/337bc60db7f1312a06f7cddd3e3b7e45.webp",
+st.markdown("""
+<style>
+.main > div {
+    padding-top: 2rem;
 }
 
-set_bg(bg_images.get(menu, ""))
+.block-container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+[data-testid="stSidebar"] {
+    background-color: #f5f7fa;
+}
+</style>
+""", unsafe_allow_html=True)
+
+# -------------------------------
+# Title
+# -------------------------------
+st.title("🗳️ Smart Election Assistant")
+st.caption("AI-powered guide for Indian voters 🇮🇳")
+
+# -------------------------------
+# Sidebar
+# -------------------------------
+st.sidebar.title("Navigation")
+
+menu = st.sidebar.radio(
+    "Go to",
+    [
+        "🏠 Home",
+        "👤 Check Eligibility",
+        "📝 Register to Vote",
+        "🗳️ Voting Guide",
+        "📍 Find Polling Info",
+        "💬 AI Assistant"
+    ]
+)
+# -------------------------------
+# HOME
+# -------------------------------
+if menu == "🏠 Home":
+
+    st.image(
+        "https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=1400",
+        use_container_width=True
+    )
+
+    st.title("🇮🇳 Welcome to Smart Election Assistant")
+
+    st.markdown("""
+    ### Your Complete Election Guide
+
+    This assistant helps Indian citizens:
+
+    ✅ Check voting eligibility  
+    ✅ Register as a voter  
+    ✅ Understand voting process  
+    ✅ Find nearest polling booth  
+    ✅ Ask election-related questions using AI
+    """)
+
+    st.info("🗳️ First-time voter? Start with **Eligibility Check** from the sidebar.")
 
 # -------------------------------
 # ELIGIBILITY
@@ -72,6 +107,7 @@ elif menu == "👤 Check Eligibility":
     if st.button("Check"):
         if age >= 18 and citizen == "Indian":
             st.success("You are eligible 🎉")
+            st.balloons()
         else:
             st.error("Not eligible")
 
@@ -82,11 +118,13 @@ elif menu == "📝 Register to Vote":
     st.header("Voter Registration")
 
     st.markdown("""
-1. Visit NVSP portal  
+### Steps to Register
+
+1. Visit the NVSP portal  
 2. Fill Form 6  
-3. Upload documents  
-4. Submit  
-5. Get EPIC
+3. Upload required documents  
+4. Submit application  
+5. Receive EPIC voter ID
 """)
 
 # -------------------------------
@@ -99,15 +137,15 @@ elif menu == "🗳️ Voting Guide":
         "Check eligibility",
         "Register",
         "Get Voter ID",
-        "Find booth",
+        "Find polling booth",
         "Vote using EVM"
     ]
 
     for i, s in enumerate(steps, 1):
-        st.write(f"{i}. {s}")
+        st.write(f"✅ Step {i}: {s}")
 
 # -------------------------------
-# POLLING INFO (FIXED)
+# POLLING INFO
 # -------------------------------
 elif menu == "📍 Find Polling Info":
     st.header("Nearest Booth Finder")
@@ -128,7 +166,7 @@ elif menu == "📍 Find Polling Info":
 
     booths.sort(key=lambda x: x["distance"])
 
-    st.success(f"Nearest: {booths[0]['name']}")
+    st.success(f"Nearest Booth: {booths[0]['name']}")
 
     m = folium.Map(location=user_location, zoom_start=14)
 
@@ -140,10 +178,10 @@ elif menu == "📍 Find Polling Info":
     st_folium(m, width=700)
 
 # -------------------------------
-# AI CHAT (SAFE VERSION)
+# AI CHAT
 # -------------------------------
 elif menu == "💬 AI Assistant":
-    st.header("Election AI")
+    st.header("Election AI Assistant")
 
     if "chat" not in st.session_state:
         st.session_state.chat = []
@@ -158,5 +196,5 @@ elif menu == "💬 AI Assistant":
         st.session_state.chat.append(("You", q))
         st.session_state.chat.append(("AI", ans))
 
-    for s, m in st.session_state.chat:
-        st.markdown(f"**{s}:** {m}")
+    for sender, msg in st.session_state.chat:
+        st.markdown(f"**{sender}:** {msg}")
