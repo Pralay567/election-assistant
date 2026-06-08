@@ -1,6 +1,7 @@
 streamlit
 folium
 streamlit-folium
+geopy
 google-generativeai
 python-dotenv
 
