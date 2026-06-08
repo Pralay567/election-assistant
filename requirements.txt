@@ -1,4 +1,6 @@
 streamlit
+folium
+streamlit-folium
 google-generativeai
 python-dotenv
-streamlit
+
